@@ -603,6 +603,12 @@ function observe(){
     io.unobserve(e.target);
   }), {threshold:.12});
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  // safety net: if the observer never fires (some in-app browsers), show everything
+  setTimeout(() => {
+    if (document.querySelector('.rv.in')) return;
+    document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
+    document.querySelectorAll('.meter i').forEach(m => m.style.width = m.dataset.v + '%');
+  }, 2500);
 }
 
 document.addEventListener('click', e => {
