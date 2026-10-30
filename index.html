@@ -9,18 +9,18 @@
 <meta property="og:description" content="مواقع، تطبيقات، أنظمة، منصات، تصميم ومونتاج.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="أسامة محمد البتيت">
-<meta property="og:image" content="https://osamah-cv.web.app/og.png?v=3">
-<meta property="og:image:secure_url" content="https://osamah-cv.web.app/og.png?v=3">
+<meta property="og:image" content="https://osamah-cv.web.app/og.png?v=4">
+<meta property="og:image:secure_url" content="https://osamah-cv.web.app/og.png?v=4">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="شعار أسامة محمد">
-<meta name="twitter:image" content="https://osamah-cv.web.app/og.png?v=3">
+<meta name="twitter:image" content="https://osamah-cv.web.app/og.png?v=4">
 <link rel="apple-touch-icon" href="og-square.png">
 <meta property="og:url" content="https://osamah-cv.web.app/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#451D29">
-<link rel="icon" type="image/png" href="logo-mark.png">
+<link rel="icon" type="image/png" href="logo-mark.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
@@ -228,23 +228,46 @@ html[dir="rtl"] .lux::after{-webkit-mask:radial-gradient(70% 70% at 0% 0%,#000,t
 .lang.lux .meter i{background:linear-gradient(90deg,#F0DCE1,#fff)!important;box-shadow:0 0 12px rgba(240,220,225,.55)}
 html[dir="rtl"] .lang.lux .meter i{background:linear-gradient(270deg,#F0DCE1,#fff)!important}
 
-/* one colour per section: burgundy and peacock sections alternate, every card inside a section matches */
-:is(#about,#skills,#education) :is(.lux,.pj){--g1:#451D29;--g2:#6E2E40;--glow:#925064;--hi:#F0DCE1}
-:is(#experience,#projects) :is(.lux,.pj){--g1:#183F43;--g2:#245B60;--glow:#6D9293;--hi:#DCE8E5}
-.lux .where,.tl .lux .where{color:var(--hi)!important}
+/* identity system: every card is a burgundy gradient; peacock is the secondary colour for the
+   small parts (pills, tags, badges, icons, buttons) and for the highlight text */
+.pj,.lux{--g1:#451D29;--g2:#6E2E40;--glow:#925064;--hi:#A9D3CF;--sec:#245B60;--sec2:#6D9293}
+.pj.g1,.lux.g1,.lux.g0{--g1:#2E121B;--g2:#4E2130;--glow:#925064}
+.pj.g2,.lux.g2{--g1:#451D29;--g2:#682B3B;--glow:#925064}
+.pj.g3,.lux.g3{--g1:#3A1822;--g2:#7A3A4C;--glow:#925064}
+.pj.g4,.lux.g4{--g1:#4A1F2C;--g2:#8A4A5D;--glow:#B47888}
+/* peacock parts */
+.glass,.pj .ico{background:linear-gradient(145deg,#245B60,#183F43)!important;border:1px solid rgba(169,211,207,.35)!important;color:#DCE8E5!important;box-shadow:0 8px 20px -8px rgba(24,63,67,.7)!important}
+.pj .cat{background:linear-gradient(135deg,#245B60,#1D4C50);border-color:rgba(169,211,207,.3);color:#DCE8E5}
+.tags span{background:rgba(36,91,96,.75);border-color:rgba(169,211,207,.25);color:#DCE8E5}
+.pj .priv{background:rgba(24,63,67,.7);border:1px dashed rgba(169,211,207,.55);color:#DCE8E5}
+.pj .visit{background:linear-gradient(135deg,#2C6B70,#245B60);color:#fff;box-shadow:0 6px 18px -6px rgba(24,63,67,.8)}
+.pj .visit:hover{background:#DCE8E5;color:#183F43}
+.tl .lux .when{background:rgba(36,91,96,.8);border-color:rgba(169,211,207,.3);color:#DCE8E5}
+.tl .lux .tg{background:linear-gradient(135deg,#2C6B70,#245B60);border-color:rgba(169,211,207,.6);color:#fff;animation-name:pingp}
+.tl .lux .tg:hover{background:#DCE8E5;color:#183F43}
+.tl .lux.open .tg{background:transparent;border-color:rgba(169,211,207,.35);color:#A9D3CF}
+@keyframes pingp{0%{box-shadow:0 0 0 0 rgba(109,146,147,.6)}70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.lux .fact + .fact{border-top-color:rgba(169,211,207,.18)}
+/* peacock highlight text on the burgundy cards */
+.lux .where,.tl .lux .where,.lux .fact small,.pj .num,.lang.lux .lg-row small,.about .lux.txt .q{color:var(--hi)!important}
 .tl .lux li::marker{color:var(--hi)!important}
-.lang.lux .lg-row small{color:var(--hi)!important}
-.lang.lux .meter i{background:linear-gradient(90deg,var(--hi),#fff)!important;box-shadow:0 0 12px color-mix(in srgb,var(--hi) 60%,transparent)!important}
-html[dir="rtl"] .lang.lux .meter i{background:linear-gradient(270deg,var(--hi),#fff)!important}
-.about .lux.txt .q{color:var(--hi)}
-.pj .visit{color:var(--g1)}
-:is(#experience,#projects) .sh h2::after{background:#245B60}
-:is(#experience,#projects) .sh h2{color:#183F43}
-:is(#about,#skills,#education) .sh h2{color:#451D29}
-#experience .tl::before{background:linear-gradient(180deg,#245B60,var(--line))}
-#experience .tl .card::before{background:linear-gradient(145deg,#183F43,#6D9293);box-shadow:0 0 0 2px #245B60}
-.contact{background:radial-gradient(90% 120% at 100% 0%,rgba(109,146,147,.45),transparent 55%),linear-gradient(140deg,#10292C,#183F43 55%,#245B60)!important;color:#fff!important;position:relative;overflow:hidden}
-:root[data-theme="dark"] :is(#experience,#projects) .sh h2,:root[data-theme="dark"] :is(#about,#skills,#education) .sh h2{color:var(--text)}
+.pj .num{opacity:.85}
+.lang.lux .meter{background:rgba(220,232,229,.14)}
+.lang.lux .meter i,html[dir="rtl"] .lang.lux .meter i{background:linear-gradient(90deg,#6D9293,#DCE8E5)!important;box-shadow:0 0 12px rgba(109,146,147,.6)!important}
+html[dir="rtl"] .lang.lux .meter i{background:linear-gradient(270deg,#6D9293,#DCE8E5)!important}
+/* page level: burgundy titles, peacock accents */
+.sh h2{color:#451D29}
+.sh h2::after{background:linear-gradient(90deg,#245B60,#6D9293)}
+html[dir="rtl"] .sh h2::after{background:linear-gradient(270deg,#245B60,#6D9293)}
+.sh p,.kicker,.privnote{color:#245B60}
+.tab.on{background:linear-gradient(135deg,#245B60,#183F43);color:#fff}
+.tl::before{background:linear-gradient(180deg,#245B60,var(--line))}
+.tl .card::before{background:linear-gradient(145deg,#245B60,#6D9293);box-shadow:0 0 0 2px #245B60}
+.contact{background:radial-gradient(90% 120% at 100% 0%,rgba(146,80,100,.45),transparent 55%),linear-gradient(140deg,#2E121B,#451D29 55%,#682B3B)!important;color:#fff!important;position:relative;overflow:hidden}
+.links a{background:linear-gradient(135deg,rgba(44,107,112,.9),rgba(36,91,96,.9))!important;border-color:rgba(169,211,207,.35)!important;color:#fff}
+.links a:hover{background:#DCE8E5!important;color:#183F43!important}
+:root[data-theme="dark"] .sh h2{color:var(--text)}
+:root[data-theme="dark"] .sh p,:root[data-theme="dark"] .kicker,:root[data-theme="dark"] .privnote{color:#A9D3CF}
 @media print{.lux{color:#000!important;background:#fff!important;box-shadow:none}.lux *{color:#222!important}.lux::after,.lux .wm{display:none}}
 .tab.on{background:linear-gradient(135deg,#451D29,#682B3B);border-color:transparent;color:#fff}
 @media (max-width:860px){.pj.feat{grid-column:auto}.pj.feat h3{font-size:22px}}
@@ -277,7 +300,7 @@ html[dir="rtl"] .meter i{background:linear-gradient(270deg,var(--brand),var(--ac
 .links a{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);font-weight:600;font-size:14px;transition:.2s}
 .links a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 .links svg{width:18px;height:18px}
-footer .flogo{width:84px;padding:8px;border-radius:14px;background:#fff;margin-bottom:10px}
+footer .flogo{width:130px;padding:8px;border-radius:14px;background:#fff;margin-bottom:10px}
 footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
 
 /* reveal */
@@ -311,7 +334,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
 
 <header class="bar">
   <div class="wrap">
-    <a class="logo" href="#top"><img src="logo-mark.png" alt=""><span data-i="brand"></span></a>
+    <a class="logo" href="#top"><img src="logo-mark.png?v=2" alt=""><span data-i="brand"></span></a>
     <nav id="nav"></nav>
     <div class="tools">
       <button class="btn-ic" id="langBtn" title="Language">EN</button>
@@ -385,7 +408,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
     </div>
   </div></section>
 </main>
-<footer><img class="flogo" src="logo.png" alt=""><br><span data-i="footer"></span> © <span id="yr"></span></footer>
+<footer><img class="flogo" src="logo.png?v=2" alt=""><br><span data-i="footer"></span> © <span id="yr"></span></footer>
 
 <script>
 /* ===== بيانات التواصل — عدّلها هنا (اترك القيمة فارغة لإخفاء الزر) ===== */
