@@ -227,9 +227,26 @@ html[dir="rtl"] .lux::after{-webkit-mask:radial-gradient(70% 70% at 0% 0%,#000,t
 .lang.lux .meter{background:rgba(255,255,255,.14);height:9px}
 .lang.lux .meter i{background:linear-gradient(90deg,#F0DCE1,#fff)!important;box-shadow:0 0 12px rgba(240,220,225,.55)}
 html[dir="rtl"] .lang.lux .meter i{background:linear-gradient(270deg,#F0DCE1,#fff)!important}
+
+/* one colour per section: burgundy and peacock sections alternate, every card inside a section matches */
+:is(#about,#skills,#education) :is(.lux,.pj){--g1:#451D29;--g2:#6E2E40;--glow:#925064;--hi:#F0DCE1}
+:is(#experience,#projects) :is(.lux,.pj){--g1:#183F43;--g2:#245B60;--glow:#6D9293;--hi:#DCE8E5}
+.lux .where,.tl .lux .where{color:var(--hi)!important}
+.tl .lux li::marker{color:var(--hi)!important}
+.lang.lux .lg-row small{color:var(--hi)!important}
+.lang.lux .meter i{background:linear-gradient(90deg,var(--hi),#fff)!important;box-shadow:0 0 12px color-mix(in srgb,var(--hi) 60%,transparent)!important}
+html[dir="rtl"] .lang.lux .meter i{background:linear-gradient(270deg,var(--hi),#fff)!important}
+.about .lux.txt .q{color:var(--hi)}
+.pj .visit{color:var(--g1)}
+:is(#experience,#projects) .sh h2::after{background:#245B60}
+:is(#experience,#projects) .sh h2{color:#183F43}
+:is(#about,#skills,#education) .sh h2{color:#451D29}
+#experience .tl::before{background:linear-gradient(180deg,#245B60,var(--line))}
+#experience .tl .card::before{background:linear-gradient(145deg,#183F43,#6D9293);box-shadow:0 0 0 2px #245B60}
+.contact{background:radial-gradient(90% 120% at 100% 0%,rgba(109,146,147,.45),transparent 55%),linear-gradient(140deg,#10292C,#183F43 55%,#245B60)!important;color:#fff!important;position:relative;overflow:hidden}
+:root[data-theme="dark"] :is(#experience,#projects) .sh h2,:root[data-theme="dark"] :is(#about,#skills,#education) .sh h2{color:var(--text)}
 @media print{.lux{color:#000!important;background:#fff!important;box-shadow:none}.lux *{color:#222!important}.lux::after,.lux .wm{display:none}}
 .tab.on{background:linear-gradient(135deg,#451D29,#682B3B);border-color:transparent;color:#fff}
-.contact{background:radial-gradient(90% 120% at 100% 0%,rgba(146,80,100,.45),transparent 55%),linear-gradient(140deg,#2B111A,#451D29 55%,#682B3B)!important;color:#fff!important;position:relative;overflow:hidden}
 @media (max-width:860px){.pj.feat{grid-column:auto}.pj.feat h3{font-size:22px}}
 @media print{.pj{color:#000;background:#fff!important;border:1px solid #ccc}.pj p,.tags span{color:#333}.pj .wm,.pj::after{display:none}}
 
