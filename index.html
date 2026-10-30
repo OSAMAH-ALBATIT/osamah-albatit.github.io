@@ -305,6 +305,61 @@ html[dir="rtl"] .lang.lux .meter i{background:linear-gradient(270deg,#F0DCE1,#ff
 .links a{background:var(--btnBg)!important;border:0!important;color:#fff!important}
 .links a:hover{background:var(--btnHover)!important}
 footer .flogo{box-shadow:var(--cShadow)}
+/* ===== refinements: richer cards and living buttons ===== */
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+:root{
+  --cA:linear-gradient(155deg,#F1E2E1 0%,#DFC7C8 100%);
+  --cB:linear-gradient(155deg,#E8F1EE 0%,#CADDD8 100%);
+  --cC:linear-gradient(155deg,#EEDDDD 0%,#E3DCD7 48%,#CCDED9 100%);
+  --cLine:1px solid rgba(255,255,255,.75);
+  --btnFill:linear-gradient(135deg,#2A6A6F 0%,#245B60 45%,#5B3F4F 100%);
+  --btnRing:conic-gradient(from var(--ang),#6D9293,#DCE8E5,#925064,#E7D9D8,#6D9293);
+  --pillFill:linear-gradient(135deg,rgba(255,255,255,.85),rgba(220,232,229,.75));
+  --pillRing:linear-gradient(135deg,#6D9293,#925064);
+  --pillInk:#245B60;
+  --chipBg:rgba(255,255,255,.7); --chipInk:#245B60;
+}
+:root[data-theme="dark"]{
+  --cA:linear-gradient(155deg,rgba(146,80,100,.30) 0%,rgba(104,43,59,.14) 45%,rgba(36,91,96,.22) 100%);
+  --cB:linear-gradient(155deg,rgba(109,146,147,.26) 0%,rgba(36,91,96,.18) 50%,rgba(146,80,100,.16) 100%);
+  --cC:linear-gradient(155deg,rgba(146,80,100,.22) 0%,rgba(31,77,82,.30) 55%,rgba(109,146,147,.20) 100%);
+  --cLine:1px solid rgba(220,232,229,.16);
+  --btnFill:linear-gradient(135deg,#8A4A5D 0%,#682B3B 50%,#2E5E62 100%);
+  --btnRing:conic-gradient(from var(--ang),#925064,#E7D9D8,#6D9293,#DCE8E5,#925064);
+  --pillFill:linear-gradient(135deg,#5A2B3A,#1F4D52);
+  --pillRing:linear-gradient(135deg,#925064,#6D9293);
+  --pillInk:#F3E7E9;
+}
+/* main action buttons: gradient fill + rotating gradient ring + light sweep */
+.pj .visit,.tl .lux .tg,.links a,.btn.pri{
+  position:relative;overflow:hidden;isolation:isolate;
+  border:1.5px solid transparent!important;
+  background:var(--btnFill) padding-box,var(--btnRing) border-box!important;
+  color:#fff!important;animation:ring 4s linear infinite!important;
+  box-shadow:0 10px 22px -12px rgba(36,91,96,.75)!important;transition:transform .25s,box-shadow .25s}
+.pj .visit::after,.tl .lux .tg::after,.links a::after,.btn.pri::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);
+  transform:translateX(-120%);animation:sweep 3.2s ease-in-out infinite}
+.pj .visit:hover,.tl .lux .tg:hover,.links a:hover,.btn.pri:hover{transform:translateY(-2px);box-shadow:0 16px 28px -12px rgba(36,91,96,.85)!important;background:var(--btnFill) padding-box,var(--btnRing) border-box!important;color:#fff!important}
+.tl .lux.open .tg{background:var(--pillFill) padding-box,var(--pillRing) border-box!important;color:var(--pillInk)!important;box-shadow:none!important}
+.tl .lux.open .tg::after{display:none}
+@keyframes ring{to{--ang:360deg}}
+@keyframes sweep{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+/* small pills (status, category, private): soft frosted fill with a thin gradient ring */
+.pj .cat,.tl .lux .when{
+  border:1px solid transparent!important;
+  background:var(--pillFill) padding-box,var(--pillRing) border-box!important;
+  color:var(--pillInk)!important;backdrop-filter:blur(6px);font-weight:800}
+.pj .priv{background:var(--pillFill) padding-box,var(--pillRing) border-box!important;border:1px solid transparent!important;color:var(--pillInk)!important}
+.tags span{background:var(--chipBg)!important;color:var(--chipInk)!important;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--chipInk) 18%,transparent)}
+.tab.on{border:1.5px solid transparent!important;background:var(--btnFill) padding-box,var(--btnRing) border-box!important;animation:ring 4s linear infinite}
+/* icon tiles get a soft inner light */
+.glass,.pj .ico{box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 8px 18px -8px rgba(69,29,41,.55)!important}
+/* secondary buttons and idle tabs: frosted with a thin gradient ring */
+.btn:not(.pri),.tab:not(.on),.btn-ic{border:1.5px solid transparent!important;background:var(--pillFill) padding-box,var(--pillRing) border-box!important;color:var(--pillInk)!important}
+.btn:not(.pri):hover,.tab:not(.on):hover,.btn-ic:hover{background:var(--btnFill) padding-box,var(--btnRing) border-box!important;color:#fff!important}
+@media (prefers-reduced-motion:reduce){.pj .visit,.tl .lux .tg,.links a,.btn.pri,.tab.on{animation:none!important}.pj .visit::after,.tl .lux .tg::after,.links a::after,.btn.pri::after{display:none}}
 @media print{.lux{color:#000!important;background:#fff!important;box-shadow:none}.lux *{color:#222!important}.lux::after,.lux .wm{display:none}}
 .tab.on{background:linear-gradient(135deg,#451D29,#682B3B);border-color:transparent;color:#fff}
 @media (max-width:860px){.pj.feat{grid-column:auto}.pj.feat h3{font-size:22px}}
