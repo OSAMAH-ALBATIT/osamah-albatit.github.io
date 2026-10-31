@@ -439,6 +439,114 @@ footer .flogo{box-shadow:var(--cShadow)}
 #toTop svg{width:20px;height:20px}
 @media (prefers-reduced-motion:reduce){.orb,.ph,.ph::after,.hero h1,.badge b,.tl .card::before,#toTop{animation:none!important}.pj.in,.lux.in{transform:none!important}}
 @media print{#prog,#toTop,.orb{display:none!important}.hero h1{-webkit-text-fill-color:currentColor}}
+/* ===== identity v3: burgundy #800020/#A52A45/#500016 · charcoal #39313A/#1C1C22/#0D0D0F · grey #A1A1AA · sand #D3C7A6 · off-white #F5F5F5
+   light = ivory cards under a charcoal hero (model 2) · dark = charcoal black (model 4) ===== */
+:root{
+  --bg:#F5F5F5; --surface:#FFFFFF; --surface-2:#F1EDE3; --text:#1C1C22; --muted:#39313A; --line:#E4DCC8; --brand:#1C1C22;
+  --cA:linear-gradient(160deg,#FFFFFF 0%,#FAF8F3 100%);
+  --cB:linear-gradient(160deg,#FDFCF8 0%,#F4EFE4 100%);
+  --cC:linear-gradient(160deg,#FFFFFF 0%,#F6F2EA 100%);
+  --cInk:#1C1C22; --cTitle:#1C1C22; --cBody:#39313A; --hiInk:#800020; --num:#A52A45; --wmInk:#D3C7A6;
+  --cLine:1px solid #E4DCC8; --cShadow:0 16px 34px -22px rgba(28,28,34,.42); --cShadowH:0 26px 46px -20px rgba(28,28,34,.5);
+  --cGlow:rgba(211,199,166,.38); --cGrid:rgba(28,28,34,.035);
+  --icoBg:linear-gradient(145deg,#1C1C22,#39313A); --icoInk:#D3C7A6;
+  --pillFill:linear-gradient(135deg,#F8F3E8,#EFE7D5); --pillRing:linear-gradient(135deg,#D3C7A6,#A52A45); --pillInk:#800020;
+  --chipBg:#F1F1F2; --chipInk:#39313A;
+  --btnFill:linear-gradient(135deg,#A52A45 0%,#800020 55%,#500016 100%);
+  --btnRing:conic-gradient(from var(--ang),#D3C7A6,#F5F5F5,#A52A45,#500016,#D3C7A6);
+  --privLine:#A1A1AA; --privInk:#39313A; --privBg:#F7F7F8;
+  --trk:#EEEAE0; --fill:linear-gradient(270deg,#800020,#A52A45 60%,#D3C7A6);
+  --band:radial-gradient(70% 120% at 0% 100%,rgba(128,0,32,.55),transparent 60%),linear-gradient(120deg,#1C1C22 0%,#39313A 60%,#500016 100%); --bandInk:#F5F5F5;
+  --h2:#1C1C22; --h2line:linear-gradient(90deg,#800020,#D3C7A6); --kick:#D3C7A6; --role:#D3C7A6;
+  --pri:var(--btnFill); --dot:linear-gradient(145deg,#A52A45,#800020);
+  --pgFill:linear-gradient(135deg,#FFFFFF,#F7F2E7); --pgRing:linear-gradient(135deg,#D3C7A6,#A52A45); --pgInk:#800020; --pgSub:#800020;
+  --spot:rgba(165,42,69,.10);
+  --btnBg:var(--btnFill); --btnHover:#A52A45;
+}
+:root[data-theme="dark"]{
+  --bg:#0D0D0F; --surface:#1C1C22; --surface-2:#26242C; --text:#F5F5F5; --muted:#A1A1AA; --line:rgba(211,199,166,.14); --brand:#F5F5F5;
+  --cA:linear-gradient(155deg,#1C1C22 0%,#24212A 60%,#2E2830 100%);
+  --cB:linear-gradient(155deg,#1E1C23 0%,#1C1C22 55%,#2A1219 100%);
+  --cC:linear-gradient(155deg,#26232B 0%,#1C1C22 100%);
+  --cInk:#F5F5F5; --cTitle:#FFFFFF; --cBody:#A1A1AA; --hiInk:#D3C7A6; --num:#A52A45; --wmInk:#A52A45;
+  --cLine:1px solid rgba(211,199,166,.14); --cShadow:0 20px 40px -18px rgba(0,0,0,.8); --cShadowH:0 30px 54px -18px rgba(0,0,0,.9);
+  --cGlow:rgba(128,0,32,.38); --cGrid:rgba(245,245,245,.035);
+  --icoBg:linear-gradient(145deg,#A52A45,#800020); --icoInk:#fff;
+  --pillFill:linear-gradient(135deg,#3A1520,#24151B); --pillRing:linear-gradient(135deg,#A52A45,#D3C7A6); --pillInk:#F3D7DD;
+  --chipBg:rgba(211,199,166,.1); --chipInk:#D3C7A6;
+  --privLine:rgba(211,199,166,.5); --privInk:#D3C7A6; --privBg:rgba(0,0,0,.2);
+  --trk:rgba(245,245,245,.08);
+  --band:radial-gradient(80% 140% at 100% 0%,rgba(128,0,32,.55),transparent 55%),linear-gradient(135deg,#1C1C22,#141418); --bandInk:#F5F5F5;
+  --h2:#FFFFFF; --h2line:linear-gradient(90deg,#A52A45,#D3C7A6); --kick:#D3C7A6; --role:#D3C7A6;
+  --pgFill:linear-gradient(135deg,#26222A,#1C1C22); --pgRing:linear-gradient(135deg,#A52A45,#D3C7A6); --pgInk:#F5F5F5; --pgSub:#D3C7A6;
+  --spot:rgba(165,42,69,.16);
+  --btnFill:linear-gradient(135deg,#A52A45 0%,#800020 55%,#500016 100%);
+  --btnRing:conic-gradient(from var(--ang),#D3C7A6,#F5F5F5,#A52A45,#500016,#D3C7A6);
+  --btnBg:var(--btnFill); --btnHover:#A52A45; --pri:var(--btnFill); --dot:linear-gradient(145deg,#A52A45,#800020);
+  --fill:linear-gradient(270deg,#800020,#A52A45 60%,#D3C7A6);
+}
+/* hero sits on the charcoal band in both modes */
+.hero .lead,.stats div{color:#A1A1AA}
+.stats strong{color:#F5F5F5}
+.stats div:hover strong{color:#D3C7A6!important}
+.hero .btn:not(.pri){background:linear-gradient(135deg,#2B2329,#1C1C22) padding-box,linear-gradient(135deg,rgba(211,199,166,.7),rgba(165,42,69,.7)) border-box!important;color:#F5F5F5!important}
+.hero h1{background:none!important;-webkit-text-fill-color:#F5F5F5!important;color:#F5F5F5!important;position:relative}
+.hero h1::after{content:"";display:block;height:3px;width:min(260px,70%);margin-top:10px;border-radius:3px;background:linear-gradient(90deg,transparent,#D3C7A6,#A52A45,transparent);background-size:200% 100%;animation:sand 3.5s linear infinite}
+@media (max-width:860px){.hero h1::after{margin-inline:auto}}
+@keyframes sand{from{background-position:200% 0}to{background-position:-200% 0}}
+.hero .w{text-shadow:0 0 0 transparent;animation:word .8s cubic-bezier(.2,.8,.2,1) both,glow 5s ease-in-out infinite;animation-delay:calc(.15s + var(--i) * .09s),calc(1.4s + var(--i) * .5s)}
+@keyframes glow{0%,100%{text-shadow:0 0 0 transparent}50%{text-shadow:0 0 18px rgba(211,199,166,.55)}}
+.badge{color:var(--text)}
+.ph::before{border-color:#D3C7A6!important}
+.ph::after{background:conic-gradient(from var(--ang),transparent 0 55%,#D3C7A6 70%,#A52A45 85%,transparent 100%)!important}
+.orb.o1{background:#A52A45}.orb.o2{background:#D3C7A6;opacity:.22}.orb.o3{background:#800020;opacity:.35}
+#prog{background:linear-gradient(90deg,#800020,#A52A45,#D3C7A6)!important;box-shadow:0 0 10px rgba(165,42,69,.6)!important}
+.contact{background:var(--band)!important;color:#F5F5F5!important;border:1px solid rgba(211,199,166,.18)!important}
+.contact p{color:#A1A1AA;opacity:1}
+.tl::before{background:linear-gradient(180deg,#A52A45,var(--line))!important}
+.tl .card::before{box-shadow:0 0 0 2px #A52A45!important}
+@keyframes dot{0%{box-shadow:0 0 0 2px #A52A45,0 0 0 2px rgba(165,42,69,.5)}100%{box-shadow:0 0 0 2px #A52A45,0 0 0 12px rgba(165,42,69,0)}}
+:root[data-theme="dark"] :is(.pj,.about .lux,.sk.lux,.two .lux)::before{background:linear-gradient(90deg,#500016,#A52A45 45%,#D3C7A6 80%,transparent)!important}
+/* light: a thin burgundy-to-sand line on top of ivory cards */
+:root:not([data-theme="dark"]) :is(.pj,.about .lux,.sk.lux,.two .lux)::before{display:block;content:"";position:absolute;inset:0 0 auto 0;height:3px;padding:0;background:linear-gradient(90deg,#800020,#A52A45 40%,#D3C7A6 80%,transparent);-webkit-mask:none;mask:none;z-index:1;border-radius:0}
+.lux .fact + .fact{border-top:1px solid var(--line)!important}
+
+/* ===== creative motion ===== */
+/* particle constellation behind the hero */
+#fx{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.9}
+/* hero entrance: lines rise in one after another */
+.hero .kicker,.hero h1,.hero .role,.hero .lead,.hero .cta,.hero .stats{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.hero h1{animation:rise .9s cubic-bezier(.2,.8,.2,1) .12s both}
+.hero .role{animation-delay:.28s}.hero .lead{animation-delay:.4s}.hero .cta{animation-delay:.52s}.hero .stats{animation-delay:.64s}
+@keyframes rise{from{opacity:0;transform:translateY(26px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.hero .w{display:inline-block}
+@keyframes word{from{opacity:0;transform:translateY(.5em) rotate(4deg)}to{opacity:1;transform:none}}
+/* cursor spotlight (mouse only) */
+#spot{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,var(--spot),transparent 65%);transform:translate(var(--sx,-999px),var(--sy,-999px));transition:transform .18s ease-out;opacity:0}
+@media (hover:hover) and (pointer:fine){#spot{opacity:1}}
+main,footer{position:relative;z-index:1}
+/* tech ticker */
+.ticker{position:relative;overflow:hidden;padding:18px 0;margin:10px 0;border-block:1px solid var(--line);background:linear-gradient(90deg,var(--bg),transparent 12%,transparent 88%,var(--bg)),color-mix(in srgb,var(--surface-2) 60%,transparent);-webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.ticker .track{display:flex;gap:14px;width:max-content;animation:marquee 32s linear infinite}
+html[dir="rtl"] .ticker .track{animation-name:marqueeR}
+.ticker:hover .track{animation-play-state:paused}
+.ticker span{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:40px;font:700 14px Inter,Tajawal;white-space:nowrap;border:1.5px solid transparent;background:var(--pgFill) padding-box,var(--pgRing) border-box;color:var(--pgInk)}
+.ticker span::before{content:"";width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,#A52A45,#D3C7A6)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes marqueeR{to{transform:translateX(50%)}}
+/* section titles: sand diamond that spins in */
+.sh h2{position:relative}
+.sh h2::before{content:"";position:absolute;inset-inline-start:-22px;top:50%;width:10px;height:10px;margin-top:-9px;background:linear-gradient(135deg,#A52A45,#D3C7A6);transform:rotate(45deg) scale(0);transition:transform .7s cubic-bezier(.3,1.6,.5,1) .3s;border-radius:2px}
+.sh.in h2::before{transform:rotate(225deg) scale(1)}
+@media (max-width:860px){.sh h2::before{display:none}}
+/* cards: light sweep across on hover */
+.pj .shine,.lux .shine{position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.28) 50%,transparent 65%);transform:translateX(-130%);transition:transform .9s cubic-bezier(.2,.8,.2,1);border-radius:inherit}
+:root[data-theme="dark"] .pj .shine,:root[data-theme="dark"] .lux .shine{background:linear-gradient(115deg,transparent 35%,rgba(211,199,166,.14) 50%,transparent 65%)}
+.pj:hover .shine,.lux:hover .shine{transform:translateX(130%)}
+/* magnetic buttons */
+.mag{transition:transform .25s cubic-bezier(.2,.8,.2,1)!important}
+@media (prefers-reduced-motion:reduce){#fx,#spot{display:none}.ticker .track,.hero *{animation:none!important}.sh h2::before{transition:none}}
+@media print{#fx,#spot,.ticker{display:none!important}}
 @media print{.lux{color:#000!important;background:#fff!important;box-shadow:none}.lux *{color:#222!important}.lux::after,.lux .wm{display:none}}
 .tab.on{background:linear-gradient(135deg,#451D29,#682B3B);border-color:transparent;color:#fff}
 @media (max-width:860px){.pj.feat{grid-column:auto}.pj.feat h3{font-size:22px}}
@@ -504,6 +612,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
 <body>
 
 <div id="prog"></div>
+<div id="spot"></div>
 <header class="bar">
   <div class="wrap">
     <a class="logo" href="#top"><img src="logo-mark.png?v=2" alt=""><span data-i="brand"></span></a>
@@ -518,7 +627,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
 
 <main id="top">
   <section class="hero">
-    <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+    <canvas id="fx"></canvas><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
     <div class="wrap">
       <div class="ph rv">
         <img src="photo.jpg" alt="أسامة محمد البتيت" id="photo">
@@ -556,6 +665,8 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
     <div class="sh rv"><h2 data-i="skillsT"></h2><div class="tabs" id="tabs"></div></div>
     <div class="skills" id="skillGrid"></div>
   </div></section>
+
+  <div class="ticker" aria-hidden="true"><div class="track"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>MariaDB</span><span>JavaScript</span><span>Node.js</span><span>WebSocket</span><span>Tailwind</span><span>PWA</span><span>Remotion</span><span>Whisper</span><span>Microsoft Office</span><span>Excel</span><span>PowerPoint</span><span>UI/UX</span><span>AI</span><span>Laravel</span><span>PHP</span><span>MySQL</span><span>MariaDB</span><span>JavaScript</span><span>Node.js</span><span>WebSocket</span><span>Tailwind</span><span>PWA</span><span>Remotion</span><span>Whisper</span><span>Microsoft Office</span><span>Excel</span><span>PowerPoint</span><span>UI/UX</span><span>AI</span></div></div>
 
   <section class="s" id="projects"><div class="wrap">
     <div class="sh rv"><h2 data-i="projT"></h2><p data-i="projSub"></p></div>
@@ -778,9 +889,9 @@ function render(){
   $('#facts').innerHTML = t.facts.map(([i,l,v]) => `<div class="fact"><span class="glass">${svg(i)}</span><div><small>${l}</small><b>${v}</b></div></div>`).join('');
   $('#timeline').innerHTML = t.exp.map((e,i) => `<div class="card lux ${['g0','g3','g1','g2'][i%4]} rv"><div class="tl-h"><div><h3>${e.t}</h3><div class="where">${e.w}</div></div><span class="when">${e.d}</span></div><ul>${e.items.map(x=>`<li>${x}</li>`).join('')}</ul><button class="tg" type="button"><span class="m">${t.showMore} · ${e.items.length} ${t.tasks}</span><span class="l">${t.showLess}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button></div>`).join('');
   $('#tabs').innerHTML = Object.entries(t.cats).map(([k,l]) => `<button class="tab${k===cat?' on':''}" data-c="${k}">${l}</button>`).join('');
-  $('#skillGrid').innerHTML = t.skills.map(([c,ic,h,p],i) => `<div class="card lux g${i%4+1} sk rv${cat!=='all'&&cat!==c?' hide':''}" data-c="${c}"><span class="wm">${svg(ic)}</span><div class="ic glass">${svg(ic)}</div><div><h4>${h}</h4><p>${p}</p></div></div>`).join('');
+  $('#skillGrid').innerHTML = t.skills.map(([c,ic,h,p],i) => `<div class="card lux g${i%4+1} sk rv${cat!=='all'&&cat!==c?' hide':''}" data-c="${c}"><span class="shine"></span><span class="wm">${svg(ic)}</span><div class="ic glass">${svg(ic)}</div><div><h4>${h}</h4><p>${p}</p></div></div>`).join('');
   const PI = ['layers','globe','grid','brief','chart','game','shield','film','pen'];
-  $('#projGrid').innerHTML = t.projects.map(([c,h,p,tags,url],i) => `<article class="card pj rv g${i%4+1}"><span class="wm">${svg(PI[i]||'code')}</span><div class="top"><span class="ico">${svg(PI[i]||'code')}</span><span class="num">${String(i+1).padStart(2,'0')}</span></div><span class="cat">${c}</span><h3>${h}</h3><p>${p}</p><div class="bot"><div class="tags">${tags.map(x=>`<span>${x}</span>`).join('')}</div>${url==='private'?`<span class="priv" title="${t.privateTip}">🔒 ${t.private}</span>`:url?`<a class="visit" href="${url}" target="_blank" rel="noopener">${t.visit} ↗</a>`:''}</div></article>`).join('');
+  $('#projGrid').innerHTML = t.projects.map(([c,h,p,tags,url],i) => `<article class="card pj rv g${i%4+1}"><span class="shine"></span><span class="wm">${svg(PI[i]||'code')}</span><div class="top"><span class="ico">${svg(PI[i]||'code')}</span><span class="num">${String(i+1).padStart(2,'0')}</span></div><span class="cat">${c}</span><h3>${h}</h3><p>${p}</p><div class="bot"><div class="tags">${tags.map(x=>`<span>${x}</span>`).join('')}</div>${url==='private'?`<span class="priv" title="${t.privateTip}">🔒 ${t.private}</span>`:url?`<a class="visit" href="${url}" target="_blank" rel="noopener">${t.visit} ↗</a>`:''}</div></article>`).join('');
   $('#langs').innerHTML = t.langs.map(([n,l,v]) => `<div><div class="lg-row"><b>${n}</b><small>${l}</small></div><div class="meter"><i data-v="${v}"></i></div></div>`).join('');
   const L = [], c = CONTACT;
   if (c.email) L.push(`<a href="mailto:${c.email}">${svg('mail')}${t.lbl.email}</a>`);
@@ -839,7 +950,7 @@ document.addEventListener('click', e => {
     document.querySelectorAll('.sk').forEach(s => s.classList.toggle('hide', cat !== 'all' && s.dataset.c !== cat));
   }
 });
-$('#langBtn').onclick = () => { lang = lang === 'ar' ? 'en' : 'ar'; store.set('cv-lang', lang); render(); };
+$('#langBtn').onclick = () => { lang = lang === 'ar' ? 'en' : 'ar'; store.set('cv-lang', lang); render(); splitName(); };
 $('#printBtn').onclick = () => window.print();
 const dark = () => document.documentElement.dataset.theme ? document.documentElement.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
 const savedTheme = store.get('cv-theme'); if (savedTheme) document.documentElement.dataset.theme = savedTheme;
@@ -878,8 +989,43 @@ addEventListener('scroll', () => {
   $('#prog').style.width = (k * 100) + '%'; $('#toTop').classList.toggle('show', h.scrollTop > 600);
 }, {passive:true});
 $('#toTop').onclick = () => scrollTo({top:0, behavior:'smooth'});
+
+// hero name: split into words that rise in
+function splitName(){ const h = document.querySelector('.hero h1'); if (!h) return;
+  h.innerHTML = h.textContent.trim().split(/\s+/).map((w, i) => `<span class="w" style="--i:${i}">${w}</span>`).join(' '); }
+// particle constellation in the hero (sand and burgundy dots, linked when close, drawn toward the cursor)
+(function(){
+  const c = document.getElementById('fx'); if (!c || reduce) return;
+  const x = c.getContext('2d'), hero = c.parentElement; let W, H, P = [], mouse = {x:-1e4, y:-1e4}, run = true, dpr = Math.min(2, devicePixelRatio || 1);
+  const cols = ['211,199,166', '165,42,69', '245,245,245'];
+  function size(){ W = hero.clientWidth; H = hero.clientHeight; c.width = W * dpr; c.height = H * dpr; x.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = W < 700 ? 34 : 70; P = Array.from({length:n}, () => ({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35, r:Math.random()*1.8+.8, c:cols[Math.random()*3|0]})); }
+  hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
+  hero.addEventListener('pointerleave', () => { mouse.x = mouse.y = -1e4; });
+  new IntersectionObserver(es => { run = es[0].isIntersecting; if (run) tick(); }).observe(hero);
+  function tick(){ if (!run) return; x.clearRect(0, 0, W, H);
+    for (const p of P){ const dx = mouse.x - p.x, dy = mouse.y - p.y, d = Math.hypot(dx, dy);
+      if (d < 160){ p.vx += dx / d * .02; p.vy += dy / d * .02; }
+      p.vx *= .985; p.vy *= .985; p.x += p.vx + (Math.random()-.5)*.05; p.y += p.vy + (Math.random()-.5)*.05;
+      if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1;
+      x.beginPath(); x.arc(p.x, p.y, p.r, 0, 6.283); x.fillStyle = `rgba(${p.c},.85)`; x.fill(); }
+    for (let i = 0; i < P.length; i++) for (let j = i + 1; j < P.length; j++){ const a = P[i], b = P[j], d = Math.hypot(a.x-b.x, a.y-b.y);
+      if (d < 110){ x.strokeStyle = `rgba(211,199,166,${(1 - d/110) * .28})`; x.lineWidth = 1; x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(b.x, b.y); x.stroke(); } }
+    requestAnimationFrame(tick); }
+  addEventListener('resize', size); size(); tick();
+})();
+// cursor spotlight
+addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; const s = document.getElementById('spot'); s.style.setProperty('--sx', e.clientX + 'px'); s.style.setProperty('--sy', e.clientY + 'px'); }, {passive:true});
+// magnetic buttons
+document.addEventListener('pointermove', e => {
+  if (reduce || e.pointerType !== 'mouse') return;
+  const b = e.target.closest('.btn,.visit,.links a,#toTop'); document.querySelectorAll('.mag').forEach(m => { if (m !== b) { m.style.transform = ''; m.classList.remove('mag'); } });
+  if (!b) return; const r = b.getBoundingClientRect();
+  b.classList.add('mag'); b.style.transform = `translate(${(e.clientX - r.left - r.width/2) * .22}px,${(e.clientY - r.top - r.height/2) * .3}px)`;
+}, {passive:true});
 $('#yr').textContent = new Date().getFullYear();
 render();
+splitName();
 </script>
 </body>
 </html>
