@@ -551,6 +551,8 @@ html[dir="rtl"] .ticker .track{animation-name:marqueeR}
 /* logo tiles: charcoal so the burgundy and sand mark stands out */
 .logo img{background:linear-gradient(145deg,#2A252C,#1C1C22)!important;border:1px solid rgba(211,199,166,.35)!important;padding:5px!important}
 footer .flogo{background:linear-gradient(145deg,#2A252C,#1C1C22)!important;border:1px solid rgba(211,199,166,.3);padding:14px!important;width:140px!important;border-radius:18px!important}
+.pj .priv.wip{border-style:solid!important;position:relative;overflow:hidden}
+.pj .priv.wip::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(211,199,166,.45) 50%,transparent 70%);transform:translateX(-120%);animation:sweep 2.6s ease-in-out infinite}
 @media print{.lux{color:#000!important;background:#fff!important;box-shadow:none}.lux *{color:#222!important}.lux::after,.lux .wm{display:none}}
 .tab.on{background:linear-gradient(135deg,#451D29,#682B3B);border-color:transparent;color:#fff}
 @media (max-width:860px){.pj.feat{grid-column:auto}.pj.feat h3{font-size:22px}}
@@ -764,7 +766,9 @@ ar:{
     ["نظام","نظام الحضور والانصراف — ساس","نظام داخلي للموارد البشرية يعرض بيانات حضور الموظفين وغيابهم وإجازاتهم في بطاقات واضحة، مع صلاحيات دخول.",["PHP","JavaScript","HTML5","CSS3"],"private"],
     ["نظام","نظام إدارة العقود — ساس","لوحة لإدارة عقود مزودي الخدمات ومتابعة مددها وقيمها، مع تنبيهات قبل انتهاء كل عقد.",["JavaScript","HTML5","CSS3","Python"],"private"],
     ["نظام","نظام الإدارة والمالية — جهة خاصة","الدراسة البرمجية والتنفيذية لنظام يدير العمليات المالية والإدارية الداخلية للجهة.",["System Analysis","Database Design","Technical Documentation"],"private"],
+    ["نظام","النظام العائلي — مالية ومهام","نظام لإدارة مالية العائلة ومهامها: لوحة بيانات برسوم حية، وتقارير شهرية وحسب الفئة، وتوزيع المهام ومتابعتها، وإشعارات تلقائية، مع صلاحيات للمسؤول والأعضاء.",["React","Vite","Tailwind CSS","Chart.js","Node.js","Express","MySQL","JWT"],"private"],
     ["لعبة","لمّة — منصة ألعاب جماعية","منصة ألعاب جماعية فيها ثلاث ألعاب: الجاسوس والمافيا والتخمين. تُلعب على جوال واحد أو أونلاين بغرف مباشرة، بثلاث لغات: العربية والإنجليزية والتركية، وقابلة للتثبيت على الجوال.",["Node.js","JavaScript","WebSocket","HTML5","CSS3","PWA","العربية · English · Türkçe"],"https://lamma-eabz.onrender.com"],
+    ["متجر","متجر رياضي إلكتروني","متجر إلكتروني للمنتجات الرياضية: تصنيفات ومنتجات، وسلة مشتريات وإتمام طلب، وتعليقات ورسائل تواصل، مع لوحة تحكم وصلاحيات.",["Laravel","PHP","Livewire","Blade","Tailwind CSS","Vite"],"wip"],
     ["مشروع التخرج","VulnScan AI","منصة لفحص الثغرات الأمنية في تطبيقات الويب: ماسح يفحص المواقع وفق OWASP Top 10، وتحليل ثابت للكود المرفوع، ومستشار ذكاء اصطناعي يشرح كل ثغرة ويقترح إصلاحها، مع لوحة تقارير ورسوم بيانية ومقارنة أداء مع OWASP ZAP.",["Python","FastAPI","SQLite","React","Vite","Tailwind CSS","Recharts","Semgrep","Docker","OWASP Top 10","AI"]],
     ["مونتاج","مونتاج فيديوهات بالكود","مونتاج فيديوهات بمشاهد مرسومة وموشن جرافيك.",["React","TypeScript","FFmpeg","AI Transcription","Motion Graphics"]],
     ["تصميم","إعلانات وهويات بصرية","تصاميم إعلانية لمشاريع تجارية وجداريات وبطاقات تعريف للموظفين.",["Ad Design","Branding","HTML/CSS","PowerPoint","PDF"]]
@@ -775,7 +779,7 @@ ar:{
   contactT:"لنعمل معًا", contactSub:"عندك فكرة موقع أو نظام أو تطبيق؟ تواصل معي ونبدأ.",
   lbl:{email:"البريد",phone:"اتصال",whatsapp:"واتساب",linkedin:"LinkedIn",github:"GitHub"},
   noContact:"أضف بيانات التواصل في أعلى ملف الصفحة",
-  visit:"زيارة الموقع", private:"نظام خاص", privateTip:"نظام داخلي خاص بالجهة، لا يمكن عرضه للعامة",
+  visit:"زيارة الموقع", wip:"جاري العمل عليه", private:"نظام خاص", privateTip:"نظام داخلي خاص بالجهة، لا يمكن عرضه للعامة",
   privNote:"الأنظمة المعلّمة بـ 🔒 أنظمة داخلية خاصة بجهاتها، ولا يمكن عرضها للعامة.",
   showMore:"عرض التفاصيل", showLess:"إخفاء التفاصيل", tasks:"مهام",
   footer:"أسامة محمد البتيت"
@@ -834,7 +838,9 @@ en:{
     ["System","Attendance System — SAS","An internal HR system that presents employee attendance, absences and leave in clear cards, with access control.",["PHP","JavaScript","HTML5","CSS3"],"private"],
     ["System","Contracts Management System — SAS","A dashboard for managing service-provider contracts, tracking terms and values, with alerts before each contract expires.",["JavaScript","HTML5","CSS3","Python"],"private"],
     ["System","Admin & Finance System — Private client","Technical and execution study for a system that runs the organisation's internal finance and administration.",["System Analysis","Database Design","Technical Documentation"],"private"],
+    ["System","Family System — finance & tasks","A system for managing a family's finances and tasks: a live-chart dashboard, monthly and category reports, task assignment and tracking, automatic notifications, and admin and member roles.",["React","Vite","Tailwind CSS","Chart.js","Node.js","Express","MySQL","JWT"],"private"],
     ["Game","Lamma — party games platform","A multiplayer party-games platform with three games: Imposter, Mafia and Guessing. Play on one phone or online in live rooms, in Arabic, English and Turkish, and install it on your phone.",["Node.js","JavaScript","WebSocket","HTML5","CSS3","PWA","العربية · English · Türkçe"],"https://lamma-eabz.onrender.com"],
+    ["Store","Sports e-commerce store","An online store for sports products: categories and products, a shopping cart and checkout, comments and contact messages, with an admin panel and roles.",["Laravel","PHP","Livewire","Blade","Tailwind CSS","Vite"],"wip"],
     ["Graduation","VulnScan AI","A web vulnerability scanning platform: a scanner that tests sites against the OWASP Top 10, static analysis of uploaded code, and an AI advisor that explains each finding and suggests a fix, with a reporting dashboard, charts and a benchmark against OWASP ZAP.",["Python","FastAPI","SQLite","React","Vite","Tailwind CSS","Recharts","Semgrep","Docker","OWASP Top 10","AI"]],
     ["Video","Code-built video editing","Video editing with illustrated scenes and motion graphics.",["React","TypeScript","FFmpeg","AI Transcription","Motion Graphics"]],
     ["Design","Ads & visual identity","Ad designs for businesses, murals and staff ID cards.",["Ad Design","Branding","HTML/CSS","PowerPoint","PDF"]]
@@ -845,7 +851,7 @@ en:{
   contactT:"Let's work together", contactSub:"Have a website, system or app in mind? Get in touch.",
   lbl:{email:"Email",phone:"Call",whatsapp:"WhatsApp",linkedin:"LinkedIn",github:"GitHub"},
   noContact:"Contact details coming soon",
-  visit:"Visit site", private:"Private system", privateTip:"Internal system owned by the client, not publicly viewable",
+  visit:"Visit site", wip:"In progress", private:"Private system", privateTip:"Internal system owned by the client, not publicly viewable",
   privNote:"Systems marked 🔒 are private internal systems and can't be shown publicly.",
   showMore:"Show details", showLess:"Hide details", tasks:"tasks",
   footer:"Osamah Mohammed Albatit"
@@ -865,6 +871,8 @@ const I = {
   pen:'<path d="M12 19l7-7 3 3-7 7z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><circle cx="11" cy="11" r="2"/>',
   film:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/>',
   office:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>',
+  home:'<path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+  cart:'<circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 7H6"/>',
   game:'<rect x="2" y="7" width="20" height="12" rx="5"/><path d="M7 11v4M5 13h4M15 12h.01M18 14h.01"/>',
   shield:'<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',
   chart:'<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>',
@@ -894,8 +902,8 @@ function render(){
   $('#timeline').innerHTML = t.exp.map((e,i) => `<div class="card lux ${['g0','g3','g1','g2'][i%4]} rv"><div class="tl-h"><div><h3>${e.t}</h3><div class="where">${e.w}</div></div><span class="when">${e.d}</span></div><ul>${e.items.map(x=>`<li>${x}</li>`).join('')}</ul><button class="tg" type="button"><span class="m">${t.showMore} · ${e.items.length} ${t.tasks}</span><span class="l">${t.showLess}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button></div>`).join('');
   $('#tabs').innerHTML = Object.entries(t.cats).map(([k,l]) => `<button class="tab${k===cat?' on':''}" data-c="${k}">${l}</button>`).join('');
   $('#skillGrid').innerHTML = t.skills.map(([c,ic,h,p],i) => `<div class="card lux g${i%4+1} sk rv${cat!=='all'&&cat!==c?' hide':''}" data-c="${c}"><span class="shine"></span><span class="wm">${svg(ic)}</span><div class="ic glass">${svg(ic)}</div><div><h4>${h}</h4><p>${p}</p></div></div>`).join('');
-  const PI = ['layers','globe','grid','brief','chart','game','shield','film','pen'];
-  $('#projGrid').innerHTML = t.projects.map(([c,h,p,tags,url],i) => `<article class="card pj rv g${i%4+1}"><span class="shine"></span><span class="wm">${svg(PI[i]||'code')}</span><div class="top"><span class="ico">${svg(PI[i]||'code')}</span><span class="num">${String(i+1).padStart(2,'0')}</span></div><span class="cat">${c}</span><h3>${h}</h3><p>${p}</p><div class="bot"><div class="tags">${tags.map(x=>`<span>${x}</span>`).join('')}</div>${url==='private'?`<span class="priv" title="${t.privateTip}">🔒 ${t.private}</span>`:url?`<a class="visit" href="${url}" target="_blank" rel="noopener">${t.visit} ↗</a>`:''}</div></article>`).join('');
+  const PI = ['layers','globe','grid','brief','chart','home','game','cart','shield','film','pen'];
+  $('#projGrid').innerHTML = t.projects.map(([c,h,p,tags,url],i) => `<article class="card pj rv g${i%4+1}"><span class="shine"></span><span class="wm">${svg(PI[i]||'code')}</span><div class="top"><span class="ico">${svg(PI[i]||'code')}</span><span class="num">${String(i+1).padStart(2,'0')}</span></div><span class="cat">${c}</span><h3>${h}</h3><p>${p}</p><div class="bot"><div class="tags">${tags.map(x=>`<span>${x}</span>`).join('')}</div>${url==='wip'?`<span class="priv wip">🛠 ${t.wip}</span>`:url==='private'?`<span class="priv" title="${t.privateTip}">🔒 ${t.private}</span>`:url?`<a class="visit" href="${url}" target="_blank" rel="noopener">${t.visit} ↗</a>`:''}</div></article>`).join('');
   $('#langs').innerHTML = t.langs.map(([n,l,v]) => `<div><div class="lg-row"><b>${n}</b><small>${l}</small></div><div class="meter"><i data-v="${v}"></i></div></div>`).join('');
   const L = [], c = CONTACT;
   if (c.email) L.push(`<a href="mailto:${c.email}">${svg('mail')}${t.lbl.email}</a>`);
