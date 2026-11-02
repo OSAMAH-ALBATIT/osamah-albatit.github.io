@@ -83,9 +83,8 @@ AR = dict(lang='ar', dir='rtl', name='أسامة محمد', role='مهندس ب�
   summary='هندسة برمجيات تجمع بين الخبرة التقنية والحس الإداري، لبناء حلول رقمية متكاملة من مواقع وأنظمة وتطبيقات ومنصات، تخدم أهداف الجهات وترفع كفاءة أعمالها، بمعايير عالية في الجودة والأداء وتجربة المستخدم.',
   jobs=[
     ('مهندس برمجيات ومساند إداري', 'شركة ساس لخدمات الأعمال', 'حاليًا', ['تطوير الموقع الرسمي للشركة وصيانته وتحديث محتواه.', 'بناء أنظمة داخلية للحضور والانصراف وإدارة العقود وبطاقات الموظفين.', 'المساندة الإدارية في الأعمال اليومية والملفات والتقارير.']),
-    ('مشاريع خاصة', 'لعدة جهات', 'مستمر', ['تنفيذ أنظمة ومنصات ومواقع حسب احتياج كل جهة، من تحليل المتطلبات حتى التسليم والدعم.', 'إعداد الدراسة البرمجية والتنفيذية لنظام إداري ومالي.']),
+    ('مشاريع خاصة', 'لعدة جهات', 'مستمر', ['تنفيذ أنظمة ومنصات ومواقع وتطبيقات حسب احتياج كل جهة، من تحليل المتطلبات حتى التسليم والدعم.', 'إعداد الدراسة البرمجية والتنفيذية لنظام إداري ومالي.', 'تصاميم إعلانية وهويات بصرية، ومونتاج فيديوهات للسوشال ميديا.']),
     ('مساند إداري', 'جهات خاصة', 'مستمر', ['متابعة الحسابات والميزانيات، وإعداد التقارير ومحاضر الاجتماعات والتقييمات.']),
-    ('عمل حر', 'مستقل', 'مستمر', ['تصميم وتطوير مواقع وتطبيقات، وتصاميم إعلانية وهويات بصرية، ومونتاج فيديوهات للسوشال ميديا.']),
   ],
   projects=[
     ('منصة الدكتور أحمد البتيت', '· albatit.com', 'منصة محتوى إسلامي متكاملة بلوحة تحكم إدارية كاملة.', 'Laravel · PHP · MySQL · Tailwind CSS'),
@@ -107,9 +106,8 @@ EN = dict(lang='en', dir='ltr', name='Osamah Mohammed', role='Software Engineer 
   summary='Software engineering that combines technical expertise with administrative insight to build complete digital solutions (websites, systems, apps and platforms) that serve an organisation\'s goals, held to high standards of quality, performance and user experience.',
   jobs=[
     ('Software Engineer & Admin Support Specialist', 'SAS Business Services', 'Present', ['Develop, maintain and update the company website.', 'Built internal attendance, contracts and staff ID card systems.', 'Administrative support for daily operations, files and reporting.']),
-    ('Private Projects', 'Several organisations', 'Ongoing', ['Systems, platforms and websites tailored to each client, from analysis to handover.', 'Technical and execution study for an admin and finance system.']),
+    ('Private Projects', 'Several organisations', 'Ongoing', ['Systems, platforms, websites and apps tailored to each client, from analysis to handover.', 'Technical and execution study for an admin and finance system.', 'Ad design, visual identities and video editing for social media.']),
     ('Administrative Support Specialist', 'Private organisations', 'Ongoing', ['Follow-up on accounts and budgets; reports, meeting minutes and evaluations.']),
-    ('Freelance', 'Independent', 'Ongoing', ['Websites and apps, ad design and visual identities, and video editing for social media.']),
   ],
   projects=[
     ('Dr. Ahmed Albatit Platform', '· albatit.com', 'A complete Islamic content platform with a full admin dashboard.', 'Laravel · PHP · MySQL · Tailwind CSS'),
