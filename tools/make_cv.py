@@ -105,7 +105,7 @@ AR = dict(lang='ar', dir='rtl', name='أسامة محمد', role='مهندس ب�
           ('التصميم والمحتوى', ['التصميم الجرافيكي', 'المونتاج', 'موشن جرافيك']),
           ('الأدوات المكتبية', ['Word', 'Excel', 'PowerPoint'])],
   langs=[('العربية', 'اللغة الأم'), ('الإنجليزية', 'جيد جدًا'), ('التركية', 'جيد جدًا')],
-  degree='بكالوريوس هندسة البرمجيات (قيد الدراسة)', uni='جامعة نيشانتاشي — إسطنبول، تركيا')
+  degree='بكالوريوس هندسة البرمجيات', uni='جامعة نيشانتاشي — إسطنبول، تركيا')
 
 EN = dict(lang='en', dir='ltr', name='Osamah Mohammed', role='Software Engineer · Web, Systems & App Developer',
   t_contact='Contact', l_mail='Email', l_phone='Phone', l_web='Web', t_skills='Skills', t_langs='Languages',
@@ -133,7 +133,7 @@ EN = dict(lang='en', dir='ltr', name='Osamah Mohammed', role='Software Engineer 
           ('Design & content', ['Graphic design', 'Video editing & motion graphics']),
           ('Office', ['Word', 'Excel', 'PowerPoint'])],
   langs=[('Arabic', 'Native'), ('English', 'Very good'), ('Turkish', 'Very good')],
-  degree='B.Sc. Software Engineering (in progress)', uni='Nişantaşı University — Istanbul, Türkiye')
+  degree='B.Sc. Software Engineering', uni='Nişantaşı University — Istanbul, Türkiye')
 
 EDGE = r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
 for d, out in [(AR, 'cv-ar'), (EN, 'cv-en')]:
