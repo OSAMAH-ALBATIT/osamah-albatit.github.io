@@ -584,6 +584,11 @@ footer .flogo{background:linear-gradient(145deg,#2A252C,#1C1C22)!important;borde
 .pj .dom{align-self:flex-start;margin-top:-6px;font:600 12.5px Inter,Tajawal;color:var(--hiInk);direction:ltr;text-decoration:none;border-bottom:1px dashed color-mix(in srgb,var(--hiInk) 45%,transparent);padding-bottom:1px}
 .pj .dom:hover{border-bottom-style:solid}
 .pjl{flex:1;margin-top:2px}
+/* phone: the status pill ("حاليًا" / "مستمر") sits in the same place on every experience card */
+@media (max-width:860px){
+  .tl .tl-h{flex-direction:column;align-items:flex-start;flex-wrap:nowrap;gap:8px}
+  .tl .tl-h .when{order:-1}
+}
 @media print{.lux{color:#000!important;background:#fff!important;box-shadow:none}.lux *{color:#222!important}.lux::after,.lux .wm{display:none}}
 .tab.on{background:linear-gradient(135deg,#451D29,#682B3B);border-color:transparent;color:#fff}
 @media (max-width:860px){.pj.feat{grid-column:auto}.pj.feat h3{font-size:22px}}
