@@ -11,18 +11,20 @@ CSS = """
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:%(font)s;color:#1C1C22;font-size:%(fs)s;line-height:%(lh)s;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{width:210mm;height:296.5mm;overflow:hidden;display:grid;grid-template-columns:64mm 1fr}
-aside{background:linear-gradient(180deg,#1C1C22 0%%,#2A1A20 70%%,#500016 100%%);color:#F5F5F5;padding:14mm 8mm}
+aside{background:linear-gradient(180deg,#1C1C22 0%%,#2A1A20 70%%,#500016 100%%);color:#F5F5F5;padding:10mm 7mm 8mm}
 main{padding:12mm 11mm 8mm}
-.ph{width:36mm;height:36mm;border-radius:6mm;overflow:hidden;border:1.2mm solid #D3C7A6;margin:0 auto 5mm}
+.ph{width:31mm;height:31mm;border-radius:5mm;overflow:hidden;border:1mm solid #D3C7A6;margin:0 auto 3.5mm}
 .ph img{width:100%%;height:100%%;object-fit:cover}
-.mark{display:block;width:16mm;margin:0 auto 6mm;opacity:.95}
-aside h3{font-size:9.5pt;letter-spacing:.06em;color:#D3C7A6;margin:6mm 0 2.2mm;padding-bottom:1.4mm;border-bottom:.3mm solid rgba(211,199,166,.35)}
+.mark{display:block;width:12mm;margin:0 auto 3mm;opacity:.95}
+aside h3{font-size:9.2pt;letter-spacing:.06em;color:#D3C7A6;margin:4.2mm 0 1.8mm;padding-bottom:1.4mm;border-bottom:.3mm solid rgba(211,199,166,.35)}
 aside p,aside li{font-size:9pt;color:#E8E3D8}
 aside ul{list-style:none;display:grid;gap:1.6mm}
 .ct li{display:flex;gap:2mm;align-items:center;word-break:break-all}
 .ct b{color:#D3C7A6;font-weight:700;min-width:14mm}
-.chips{display:flex;flex-wrap:wrap;gap:1.4mm}
-.chips span{font-size:8pt;padding:.6mm 2.2mm;border-radius:3mm;background:rgba(211,199,166,.14);border:.25mm solid rgba(211,199,166,.35);color:#F5F5F5}
+.chips{display:flex;flex-wrap:wrap;gap:1mm}
+.chips span{font-size:7.5pt;padding:.35mm 1.8mm;border-radius:3mm;background:rgba(211,199,166,.14);border:.25mm solid rgba(211,199,166,.35);color:#F5F5F5}
+.sg{margin-bottom:1.8mm}
+.sg b{display:block;font-size:8.2pt;color:#D3C7A6;margin-bottom:.9mm}
 .lg li{display:flex;justify-content:space-between}
 .lg em{font-style:normal;color:#D3C7A6}
 header h1{font-size:25pt;line-height:1.1;color:#1C1C22}
@@ -56,7 +58,7 @@ def build(d):
     font = "'Tajawal',sans-serif" if rtl else "'Inter','Tajawal',sans-serif"
     jobs = ''.join(f"""<div class="job"><div class="top"><h4>{t}</h4><span class="when">{w2}</span></div><div class="at">{w}</div><ul>{''.join(f'<li>{x}</li>' for x in items)}</ul></div>""" for t, w, w2, items in d['jobs'])
     prs = ''.join(f"""<div><h5>{h} <i>{tag}</i></h5><p>{p}</p><small>{tech}</small></div>""" for h, tag, p, tech in d['projects'])
-    skills = ''.join(f'<span>{x}</span>' for x in d['skills'])
+    skills = ''.join(f'<div class="sg"><b>{g}</b><div class="chips">{"".join(f"<span>{x}</span>" for x in items)}</div></div>' for g, items in d['skills'])
     langs = ''.join(f'<li><span>{a}</span><em>{b}</em></li>' for a, b in d['langs'])
     return f"""<!doctype html><html lang="{d['lang']}" dir="{d['dir']}"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -66,7 +68,7 @@ def build(d):
   <img class="mark" src="logo-mark.png">
   <h3>{d['t_contact']}</h3>
   <ul class="ct"><li><b>{d['l_mail']}</b>batitcr7@gmail.com</li><li><b>{d['l_phone']}</b><span dir="ltr">+90 534 606 86 80</span></li><li><b>{d['l_web']}</b>osamah-cv.web.app</li></ul>
-  <h3>{d['t_skills']}</h3><div class="chips">{skills}</div>
+  <h3>{d['t_skills']}</h3>{skills}
   <h3>{d['t_langs']}</h3><ul class="lg">{langs}</ul>
   <h3>{d['t_edu']}</h3><div class="eda"><b>{d['degree']}</b><p>{d['uni']}</p></div>
 </aside>
@@ -87,16 +89,21 @@ AR = dict(lang='ar', dir='rtl', name='أسامة محمد', role='مهندس ب�
     ('مساند إداري', 'جهات خاصة', 'مستمر', ['متابعة الحسابات والميزانيات، وإعداد التقارير ومحاضر الاجتماعات والتقييمات.']),
   ],
   projects=[
-    ('منصة الدكتور أحمد البتيت', '· albatit.com', 'منصة محتوى إسلامي متكاملة بلوحة تحكم إدارية كاملة.', 'Laravel · PHP · MySQL · Tailwind CSS'),
-    ('منصة نما لإدارة التعلم', '· nma8.com', 'إدارة المعاهد والكوادر والطلاب والتقارير الميدانية، مع صفحة تعريفية.', 'Laravel · PHP · Blade · MySQL'),
-    ('منصة التطوير العقاري', '· naq-group.com', 'نظام إداري متكامل للأملاك والوحدات والإيجارات، مع موقع تعريفي.', 'Laravel · Livewire · Alpine.js · MySQL'),
     ('موقع شركة ساس', '· sascc.co', 'تطوير الموقع الرسمي للشركة وتحديثه.', 'Laravel · PHP · MySQL'),
-    ('بوابة ساس الرقمية', '· ساس', 'بوابة داخلية تفاعلية لأقسام الشركة بصلاحيات حسب القسم.', 'Symfony · PHP · JavaScript · MySQL'),
-    ('أكاديمية ساس', '· ساس', 'موقع تفاعلي لبرامج ساس التدريبية.', 'HTML5 · CSS3 · JavaScript'),
+    ('منصة الدكتور أحمد البتيت', '· albatit.com', 'منصة محتوى إسلامي متكاملة بلوحة تحكم إدارية كاملة.', 'Laravel · PHP · MySQL · Tailwind CSS'),
+    ('منصة التطوير العقاري', '· naq-group.com', 'نظام إداري متكامل للأملاك والوحدات والإيجارات، مع موقع تعريفي.', 'Laravel · Livewire · Alpine.js · MySQL'),
+    ('منصة نما لإدارة التعلم', '· nma8.com', 'إدارة المعاهد والكوادر والطلاب والتقارير الميدانية، مع صفحة تعريفية.', 'Laravel · PHP · Blade · MySQL'),
+    ('بوابة ساس الرقمية', '· sascc.co/portal', 'بوابة داخلية تفاعلية لأقسام الشركة بصلاحيات حسب القسم.', 'Symfony · PHP · JavaScript · MySQL'),
+    ('أكاديمية ساس', '· sascc.co/sas-academy', 'موقع تفاعلي لبرامج ساس التدريبية.', 'HTML5 · CSS3 · JavaScript'),
     ('نظام الحضور والانصراف', '· ساس', 'نظام موارد بشرية لعرض حضور الموظفين وإجازاتهم.', 'PHP · JavaScript'),
     ('VulnScan AI', '· مشروع التخرج', 'فحص ثغرات تطبيقات الويب وتحليل الكود مع مستشار ذكاء اصطناعي.', 'Python · FastAPI · React · Docker'),
   ],
-  skills=['Laravel', 'PHP', 'MySQL', 'JavaScript', 'React', 'Node.js', 'Python', 'FastAPI', 'Tailwind CSS', 'Docker', 'تصميم الأنظمة', 'قواعد البيانات', 'الذكاء الاصطناعي', 'التصميم الجرافيكي', 'المونتاج والموشن', 'Microsoft Office'],
+  skills=[('البرمجة والتطوير', ['PHP', 'Laravel', 'JavaScript', 'React', 'Node.js', 'Python', 'FastAPI']),
+          ('قواعد البيانات والأدوات', ['MySQL', 'Tailwind CSS', 'Docker', 'Git']),
+          ('التحليل والتصميم', ['تحليل المتطلبات', 'تصميم الأنظمة', 'تصميم قواعد البيانات', 'UI/UX']),
+          ('الذكاء الاصطناعي', ['أدوات الذكاء الاصطناعي', 'الأتمتة']),
+          ('التصميم والمحتوى', ['التصميم الجرافيكي', 'المونتاج', 'موشن جرافيك']),
+          ('الأدوات المكتبية', ['Word', 'Excel', 'PowerPoint'])],
   langs=[('العربية', 'اللغة الأم'), ('الإنجليزية', 'جيد جدًا'), ('التركية', 'جيد جدًا')],
   degree='بكالوريوس هندسة البرمجيات (قيد الدراسة)', uni='جامعة نيشانتاشي — إسطنبول، تركيا')
 
@@ -110,16 +117,21 @@ EN = dict(lang='en', dir='ltr', name='Osamah Mohammed', role='Software Engineer 
     ('Administrative Support Specialist', 'Private organisations', 'Ongoing', ['Follow-up on accounts and budgets; reports, meeting minutes and evaluations.']),
   ],
   projects=[
-    ('Dr. Ahmed Albatit Platform', '· albatit.com', 'A complete Islamic content platform with a full admin dashboard.', 'Laravel · PHP · MySQL · Tailwind CSS'),
-    ('Namah Learning Platform', '· nma8.com', 'Institutes, staff, students and field reports, with a landing page.', 'Laravel · PHP · Blade · MySQL'),
-    ('Real Estate Platform', '· naq-group.com', 'An integrated system for properties, units and rent, with a company website.', 'Laravel · Livewire · Alpine.js · MySQL'),
     ('SAS website', '· sascc.co', 'Development and updates of the corporate website.', 'Laravel · PHP · MySQL'),
-    ('SAS Digital Portal', '· SAS', 'An interactive internal portal with access by department.', 'Symfony · PHP · JavaScript · MySQL'),
-    ('SAS Academy', '· SAS', 'An interactive site for SAS training programmes.', 'HTML5 · CSS3 · JavaScript'),
+    ('Dr. Ahmed Albatit Platform', '· albatit.com', 'A complete Islamic content platform with a full admin dashboard.', 'Laravel · PHP · MySQL · Tailwind CSS'),
+    ('Real Estate Platform', '· naq-group.com', 'An integrated system for properties, units and rent, with a company website.', 'Laravel · Livewire · Alpine.js · MySQL'),
+    ('Namah Learning Platform', '· nma8.com', 'Institutes, staff, students and field reports, with a landing page.', 'Laravel · PHP · Blade · MySQL'),
+    ('SAS Digital Portal', '· sascc.co/portal', 'An interactive internal portal with access by department.', 'Symfony · PHP · JavaScript · MySQL'),
+    ('SAS Academy', '· sascc.co/sas-academy', 'An interactive site for SAS training programmes.', 'HTML5 · CSS3 · JavaScript'),
     ('Attendance System', '· SAS', 'An HR system showing employee attendance and leave.', 'PHP · JavaScript'),
     ('VulnScan AI', '· graduation project', 'Web vulnerability scanning and code analysis with an AI advisor.', 'Python · FastAPI · React · Docker'),
   ],
-  skills=['Laravel', 'PHP', 'MySQL', 'JavaScript', 'React', 'Node.js', 'Python', 'FastAPI', 'Tailwind CSS', 'Docker', 'System design', 'Databases', 'AI', 'Graphic design', 'Video & motion', 'Microsoft Office'],
+  skills=[('Programming', ['PHP', 'Laravel', 'JavaScript', 'React', 'Node.js', 'Python', 'FastAPI']),
+          ('Databases & tools', ['MySQL', 'Tailwind CSS', 'Docker', 'Git']),
+          ('Analysis & design', ['Requirements analysis', 'System design', 'Database design', 'UI/UX']),
+          ('Artificial intelligence', ['AI tools', 'Automation']),
+          ('Design & content', ['Graphic design', 'Video editing & motion graphics']),
+          ('Office', ['Word', 'Excel', 'PowerPoint'])],
   langs=[('Arabic', 'Native'), ('English', 'Very good'), ('Turkish', 'Very good')],
   degree='B.Sc. Software Engineering (in progress)', uni='Nişantaşı University — Istanbul, Türkiye')
 

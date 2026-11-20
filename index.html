@@ -573,6 +573,17 @@ footer .flogo{background:linear-gradient(145deg,#2A252C,#1C1C22)!important;borde
 .skl{list-style:none;display:grid;gap:5px;margin-top:6px}
 .skl li{position:relative;padding-inline-start:16px;font-size:13.5px;line-height:1.6;color:var(--cBody)}
 .skl li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:7px;height:7px;border-radius:2px;transform:rotate(45deg);background:linear-gradient(135deg,#A52A45,#D3C7A6)}
+/* card glow: fixed, faint, bottom-left (no longer follows the finger or cursor) */
+.pj,.lux{--mx:0%!important;--my:100%!important;-webkit-tap-highlight-color:transparent}
+:root{--cGlow:rgba(211,199,166,.22)!important}
+:root[data-theme="dark"]{--cGlow:rgba(128,0,32,.2)!important}
+/* "open to work": smaller, under the shoulder on the right */
+.badge{left:auto!important;right:-10px!important;transform:none!important;bottom:-14px!important;padding:5px 10px!important;font-size:11.5px!important;gap:6px!important;border-radius:11px!important}
+.badge b{width:7px!important;height:7px!important}
+.pj h3{margin-bottom:0}
+.pj .dom{align-self:flex-start;margin-top:-6px;font:600 12.5px Inter,Tajawal;color:var(--hiInk);direction:ltr;text-decoration:none;border-bottom:1px dashed color-mix(in srgb,var(--hiInk) 45%,transparent);padding-bottom:1px}
+.pj .dom:hover{border-bottom-style:solid}
+.pjl{flex:1;margin-top:2px}
 @media print{.lux{color:#000!important;background:#fff!important;box-shadow:none}.lux *{color:#222!important}.lux::after,.lux .wm{display:none}}
 .tab.on{background:linear-gradient(135deg,#451D29,#682B3B);border-color:transparent;color:#fff}
 @media (max-width:860px){.pj.feat{grid-column:auto}.pj.feat h3{font-size:22px}}
@@ -646,7 +657,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
     <div class="tools">
       <button class="btn-ic" id="langBtn" title="Language">EN</button>
       <button class="btn-ic" id="themeBtn" title="Theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
-      <a class="btn-ic cv-dl" id="printBtn" href="cv-ar.pdf?v=5" download="Osamah-Mohammed-CV-AR.pdf" title="CV"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg></a>
+      <a class="btn-ic cv-dl" id="printBtn" href="cv-ar.pdf?v=7" download="Osamah-Mohammed-CV-AR.pdf" title="CV"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg></a>
     </div>
   </div>
 </header>
@@ -667,7 +678,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
         <div class="cta">
           <a class="btn pri" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg><span data-i="ctaContact"></span></a>
           <a class="btn" href="#projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3"/></svg><span data-i="ctaWork"></span></a>
-          <a class="btn cv-dl" href="cv-ar.pdf?v=5" download="Osamah-Mohammed-CV-AR.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg><span data-i="ctaPdf"></span></a>
+          <a class="btn cv-dl" href="cv-ar.pdf?v=7" download="Osamah-Mohammed-CV-AR.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg><span data-i="ctaPdf"></span></a>
         </div>
         <div class="stats rv" id="stats"></div>
       </div>
@@ -775,20 +786,20 @@ ar:{
   ],
   projT:"أعمال ومشاريع", projSub:"نماذج مختارة مما نفّذته",
   projects:[
-    ["منصة","منصة الدكتور أحمد البتيت (albatit.com)","منصة محتوى إسلامي متكاملة بلوحة تحكم إدارية كاملة، منشورة وتعمل.",["Laravel","PHP","MySQL","Blade","Tailwind CSS","Vite","JavaScript"],"https://albatit.com"],
-    ["منصة","منصة نما لإدارة التعلم (nma8.com)","منصة لإدارة التعلم لمؤسسة تعليمية: المعاهد والكوادر والطلاب والتقارير الميدانية، مع صفحة تعريفية.",["Laravel","PHP","Blade","MySQL","CSS3"],"https://nma8.com"],
-    ["نظام","منصة التطوير العقاري (naq-group.com)","نظام إداري متكامل لمؤسسة تطوير عقاري: الأملاك والوحدات والإيجارات، مع موقع تعريفي للمؤسسة.",["Laravel","PHP","Livewire","Alpine.js","Tailwind CSS","MySQL"],"https://naq-group.com"],
-    ["موقع","موقع شركة ساس (sascc.co)","تطوير الموقع الرسمي للشركة وتحديثه.",["Laravel","PHP","MySQL","JavaScript"],"https://sascc.co"],
-    ["منصة","بوابة ساس الرقمية","بوابة داخلية تفاعلية لأقسام الشركة، بصلاحيات حسب القسم والوحدة.",["Symfony","PHP","JavaScript","HTML5","CSS3","MySQL"],"https://sascc.co/portal/"],
-    ["موقع","أكاديمية ساس","موقع تفاعلي لبرامج ساس التدريبية في الإدارة والتميز وقياس الأداء.",["HTML5","CSS3","JavaScript"],"https://sascc.co/sas-academy/"],
-    ["نظام","نظام الحضور والانصراف — ساس","نظام موارد بشرية لعرض حضور الموظفين وإجازاتهم.",["PHP","JavaScript","HTML5","CSS3"],"private"],
-    ["نظام","نظام الإدارة والمالية — جهة خاصة","دراسة برمجية وتنفيذية لنظام مالي وإداري.",["System Analysis","Database Design","Technical Documentation"],"private"],
-    ["نظام","النظام العائلي — مالية ومهام","إدارة المالية والمهام بلوحة بيانات وتقارير وإشعارات.",["React","Vite","Tailwind CSS","Chart.js","Node.js","Express","MySQL","JWT"],"private"],
-    ["لعبة","لمّة — منصة ألعاب جماعية","ثلاث ألعاب جماعية تُلعب أونلاين أو على جوال واحد، بثلاث لغات.",["Node.js","JavaScript","WebSocket","HTML5","CSS3","PWA","العربية · English · Türkçe"],"https://lamma-eabz.onrender.com"],
-    ["متجر","متجر رياضي إلكتروني","متجر منتجات رياضية بسلة وطلبات ولوحة تحكم.",["Laravel","PHP","Livewire","Blade","Tailwind CSS","Vite"],"wip"],
-    ["مشروع التخرج","VulnScan AI","فحص ثغرات تطبيقات الويب وتحليل الكود، مع مستشار ذكاء اصطناعي يقترح الإصلاح.",["Python","FastAPI","SQLite","React","Vite","Tailwind CSS","Recharts","Semgrep","Docker","OWASP Top 10","AI"]],
-    ["مونتاج","مونتاج فيديوهات بالكود","فيديوهات بمشاهد مرسومة وموشن جرافيك.",["React","TypeScript","FFmpeg","AI Transcription","Motion Graphics"]],
-    ["تصميم","إعلانات وهويات بصرية","تصاميم إعلانية وجداريات وبطاقات تعريف.",["Ad Design","Branding","HTML/CSS","PowerPoint","PDF"]]
+    ["موقع","موقع شركة ساس (sascc.co)","تطوير الموقع الرسمي للشركة. تحديث المحتوى والخدمات باستمرار.",["Laravel","PHP","MySQL","JavaScript"],"https://sascc.co"],
+    ["منصة","منصة الدكتور أحمد البتيت (albatit.com)","منصة محتوى إسلامي متكاملة. لوحة تحكم إدارية كاملة، منشورة وتعمل.",["Laravel","PHP","MySQL","Blade","Tailwind CSS","Vite","JavaScript"],"https://albatit.com"],
+    ["نظام","منصة التطوير العقاري (naq-group.com)","نظام لإدارة الأملاك والوحدات والإيجارات. موقع تعريفي للمؤسسة.",["Laravel","PHP","Livewire","Alpine.js","Tailwind CSS","MySQL"],"https://naq-group.com"],
+    ["منصة","منصة نما لإدارة التعلم (nma8.com)","إدارة المعاهد والكوادر والطلاب والتقارير الميدانية. صفحة تعريفية للمنصة.",["Laravel","PHP","Blade","MySQL","CSS3"],"https://nma8.com"],
+    ["منصة","بوابة ساس الرقمية","بوابة داخلية تفاعلية لأقسام الشركة. صلاحيات حسب القسم والوحدة.",["Symfony","PHP","JavaScript","HTML5","CSS3","MySQL"],"https://sascc.co/portal/"],
+    ["موقع","أكاديمية ساس","موقع تفاعلي لبرامج ساس التدريبية. برامج في الإدارة والتميز وقياس الأداء.",["HTML5","CSS3","JavaScript"],"https://sascc.co/sas-academy/"],
+    ["نظام","نظام الحضور والانصراف — ساس","عرض حضور الموظفين وإجازاتهم. صلاحيات دخول للموارد البشرية.",["PHP","JavaScript","HTML5","CSS3"],"private"],
+    ["نظام","نظام الإدارة والمالية — جهة خاصة","دراسة برمجية وتنفيذية لنظام مالي وإداري. تصميم قواعد البيانات والوحدات.",["System Analysis","Database Design","Technical Documentation"],"private"],
+    ["نظام","النظام العائلي — مالية ومهام","إدارة المالية والمهام. لوحة بيانات وتقارير وإشعارات.",["React","Vite","Tailwind CSS","Chart.js","Node.js","Express","MySQL","JWT"],"private"],
+    ["لعبة","لمّة — منصة ألعاب جماعية","ثلاث ألعاب جماعية: الجاسوس والمافيا والتخمين. أونلاين أو على جوال واحد، بثلاث لغات.",["Node.js","JavaScript","WebSocket","HTML5","CSS3","PWA","العربية · English · Türkçe"],"https://lamma-eabz.onrender.com"],
+    ["متجر","متجر رياضي إلكتروني","تصنيفات ومنتجات وسلة مشتريات. طلبات ولوحة تحكم.",["Laravel","PHP","Livewire","Blade","Tailwind CSS","Vite"],"wip"],
+    ["مشروع التخرج","VulnScan AI","فحص ثغرات تطبيقات الويب وتحليل الكود. مستشار ذكاء اصطناعي يقترح الإصلاح.",["Python","FastAPI","SQLite","React","Vite","Tailwind CSS","Recharts","Semgrep","Docker","OWASP Top 10","AI"]],
+    ["مونتاج","مونتاج فيديوهات بالكود","فيديوهات بمشاهد مرسومة. موشن جرافيك ومونتاج احترافي.",["React","TypeScript","FFmpeg","AI Transcription","Motion Graphics"]],
+    ["تصميم","إعلانات وهويات بصرية","تصاميم إعلانية وهويات بصرية. جداريات وبطاقات تعريف.",["Ad Design","Branding","HTML/CSS","PowerPoint","PDF"]]
   ],
   eduT:"المؤهل العلمي واللغات",
   degree:"بكالوريوس هندسة البرمجيات", uni:"جامعة نيشانتاشي — إسطنبول، تركيا", gradProj:"مشروع التخرج: VulnScan AI",
@@ -843,20 +854,20 @@ en:{
   ],
   projT:"Work & projects", projSub:"Selected things I've built",
   projects:[
-    ["Platform","Dr. Ahmed Albatit Platform (albatit.com)","A complete Islamic content platform with a full admin dashboard, live and in use.",["Laravel","PHP","MySQL","Blade","Tailwind CSS","Vite","JavaScript"],"https://albatit.com"],
-    ["Platform","Namah Learning Platform (nma8.com)","A learning management platform for an education organisation: institutes, staff, students and field reports, with a landing page.",["Laravel","PHP","Blade","MySQL","CSS3"],"https://nma8.com"],
-    ["System","Real Estate Development Platform (naq-group.com)","An integrated admin system for a real estate development firm: properties, units and rent, with a company website.",["Laravel","PHP","Livewire","Alpine.js","Tailwind CSS","MySQL"],"https://naq-group.com"],
-    ["Website","SAS website (sascc.co)","Development and updates of the corporate website.",["Laravel","PHP","MySQL","JavaScript"],"https://sascc.co"],
-    ["Platform","SAS Digital Portal","An interactive internal portal for company departments, with access by department and unit.",["Symfony","PHP","JavaScript","HTML5","CSS3","MySQL"],"https://sascc.co/portal/"],
-    ["Website","SAS Academy","An interactive site for SAS training programmes in management, excellence and performance measurement.",["HTML5","CSS3","JavaScript"],"https://sascc.co/sas-academy/"],
-    ["System","Attendance System — SAS","An HR system showing employee attendance and leave.",["PHP","JavaScript","HTML5","CSS3"],"private"],
-    ["System","Admin & Finance System — Private client","Technical and execution study for a finance and admin system.",["System Analysis","Database Design","Technical Documentation"],"private"],
-    ["System","Family System — finance & tasks","Finances and tasks with a dashboard, reports and notifications.",["React","Vite","Tailwind CSS","Chart.js","Node.js","Express","MySQL","JWT"],"private"],
-    ["Game","Lamma — party games platform","Three party games, online or on one phone, in three languages.",["Node.js","JavaScript","WebSocket","HTML5","CSS3","PWA","العربية · English · Türkçe"],"https://lamma-eabz.onrender.com"],
-    ["Store","Sports e-commerce store","A sports store with cart, orders and an admin panel.",["Laravel","PHP","Livewire","Blade","Tailwind CSS","Vite"],"wip"],
-    ["Graduation","VulnScan AI","Web vulnerability scanning and code analysis, with an AI advisor that suggests fixes.",["Python","FastAPI","SQLite","React","Vite","Tailwind CSS","Recharts","Semgrep","Docker","OWASP Top 10","AI"]],
-    ["Video","Code-built video editing","Videos with illustrated scenes and motion graphics.",["React","TypeScript","FFmpeg","AI Transcription","Motion Graphics"]],
-    ["Design","Ads & visual identity","Ad designs, murals and ID cards.",["Ad Design","Branding","HTML/CSS","PowerPoint","PDF"]]
+    ["Website","SAS website (sascc.co)","Development of the corporate website. Ongoing content and service updates.",["Laravel","PHP","MySQL","JavaScript"],"https://sascc.co"],
+    ["Platform","Dr. Ahmed Albatit Platform (albatit.com)","A complete Islamic content platform. Full admin dashboard, live and in use.",["Laravel","PHP","MySQL","Blade","Tailwind CSS","Vite","JavaScript"],"https://albatit.com"],
+    ["System","Real Estate Development Platform (naq-group.com)","Property, unit and rent management. A company website.",["Laravel","PHP","Livewire","Alpine.js","Tailwind CSS","MySQL"],"https://naq-group.com"],
+    ["Platform","Namah Learning Platform (nma8.com)","Institutes, staff, students and field reports. A landing page for the platform.",["Laravel","PHP","Blade","MySQL","CSS3"],"https://nma8.com"],
+    ["Platform","SAS Digital Portal","An interactive internal portal for company departments. Access by department and unit.",["Symfony","PHP","JavaScript","HTML5","CSS3","MySQL"],"https://sascc.co/portal/"],
+    ["Website","SAS Academy","An interactive site for SAS training programmes. Management, excellence and performance measurement.",["HTML5","CSS3","JavaScript"],"https://sascc.co/sas-academy/"],
+    ["System","Attendance System — SAS","Employee attendance and leave. Access control for HR.",["PHP","JavaScript","HTML5","CSS3"],"private"],
+    ["System","Admin & Finance System — Private client","Technical and execution study for a finance and admin system. Database and module design.",["System Analysis","Database Design","Technical Documentation"],"private"],
+    ["System","Family System — finance & tasks","Family finances and tasks. Dashboard, reports and notifications.",["React","Vite","Tailwind CSS","Chart.js","Node.js","Express","MySQL","JWT"],"private"],
+    ["Game","Lamma — party games platform","Three party games: Imposter, Mafia and Guessing. Online or on one phone, in three languages.",["Node.js","JavaScript","WebSocket","HTML5","CSS3","PWA","العربية · English · Türkçe"],"https://lamma-eabz.onrender.com"],
+    ["Store","Sports e-commerce store","Categories, products and a shopping cart. Orders and an admin panel.",["Laravel","PHP","Livewire","Blade","Tailwind CSS","Vite"],"wip"],
+    ["Graduation","VulnScan AI","Web vulnerability scanning and code analysis. An AI advisor that suggests fixes.",["Python","FastAPI","SQLite","React","Vite","Tailwind CSS","Recharts","Semgrep","Docker","OWASP Top 10","AI"]],
+    ["Video","Code-built video editing","Videos with illustrated scenes. Motion graphics and professional editing.",["React","TypeScript","FFmpeg","AI Transcription","Motion Graphics"]],
+    ["Design","Ads & visual identity","Ad designs and visual identities. Murals and ID cards.",["Ad Design","Branding","HTML/CSS","PowerPoint","PDF"]]
   ],
   eduT:"Education & languages",
   degree:"B.Sc. Software Engineering", uni:"Nişantaşı University — Istanbul, Türkiye", gradProj:"Graduation project: VulnScan AI",
@@ -904,6 +915,14 @@ const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}},
 
 let lang = store.get('cv-lang') || 'ar', cat = 'all', typer;
 
+// project card helpers: the name on its own line, the domain as a link under it, the description as points
+const projName = h => h.replace(/\s*\([^)]*\)\s*$/, '');
+function projDomain(h, url){
+  if (!url || !/^https?:/.test(url) || /onrender\.com/.test(url)) return '';
+  const label = url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+  return `<a class="dom" href="${url}" target="_blank" rel="noopener">${label}</a>`;
+}
+const projPoints = p => p.split(/(?<=\.)\s+/).filter(Boolean).map(x => `<li>${x}</li>`).join('');
 function render(){
   const t = T[lang];
   document.documentElement.lang = lang;
@@ -912,15 +931,15 @@ function render(){
   $('#langBtn').textContent = lang === 'ar' ? 'EN' : 'ع';
   document.querySelectorAll('[data-i]').forEach(el => { const v = t[el.dataset.i]; if (typeof v === 'string') el.textContent = v; });
   $('#photo').alt = t.name;
-  document.querySelectorAll('.cv-dl').forEach(a => { a.href = `cv-${lang}.pdf?v=5`; a.setAttribute('download', `Osamah-Mohammed-CV-${lang.toUpperCase()}.pdf`); });
+  document.querySelectorAll('.cv-dl').forEach(a => { a.href = `cv-${lang}.pdf?v=7`; a.setAttribute('download', `Osamah-Mohammed-CV-${lang.toUpperCase()}.pdf`); });
   $('#nav').innerHTML = t.nav.map(([id,l]) => `<a href="#${id}" data-s="${id}">${l}</a>`).join('');
   $('#stats').innerHTML = t.stats.map(([n,l]) => `<div><strong>${n}</strong>${l}</div>`).join('');
   $('#facts').innerHTML = t.facts.map(([i,l,v]) => `<div class="fact"><span class="glass">${svg(i)}</span><div><small>${l}</small><b>${v}</b></div></div>`).join('');
   $('#timeline').innerHTML = t.exp.map((e,i) => `<div class="card lux ${['g0','g3','g1','g2'][i%4]} rv"><div class="tl-h"><div><h3>${e.t}</h3><div class="where">${e.w}</div></div><span class="when">${e.d}</span></div><ul>${e.items.map(x=>`<li>${x}</li>`).join('')}</ul><button class="tg" type="button"><span class="m">${t.showMore} · ${e.items.length} ${t.tasks}</span><span class="l">${t.showLess}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button></div>`).join('');
   $('#tabs').innerHTML = Object.entries(t.cats).map(([k,l]) => `<button class="tab${k===cat?' on':''}" data-c="${k}">${l}</button>`).join('');
   $('#skillGrid').innerHTML = t.skills.map(([c,ic,h,p],i) => `<div class="card lux g${i%4+1} sk rv${cat!=='all'&&cat!==c?' hide':''}" data-c="${c}"><span class="shine"></span><span class="wm">${svg(ic)}</span><div class="ic glass">${svg(ic)}</div><div><h4>${h}</h4>${Array.isArray(p) ? `<ul class="skl">${p.map(x => `<li>${x}</li>`).join('')}</ul>` : `<p>${p}</p>`}</div></div>`).join('');
-  const PI = ['layers','cap','building','globe','grid','spark','clock','chart','home','game','cart','shield','film','pen'];
-  $('#projGrid').innerHTML = t.projects.map(([c,h,p,tags,url],i) => `<article class="card pj rv g${i%4+1}"><span class="shine"></span><span class="wm">${svg(PI[i]||'code')}</span><div class="top"><span class="ico">${svg(PI[i]||'code')}</span><span class="num">${String(i+1).padStart(2,'0')}</span></div><span class="cat">${c}</span><h3>${h}</h3><p>${p}</p><div class="bot"><div class="tags">${tags.map(x=>`<span>${x}</span>`).join('')}</div>${url==='wip'?`<span class="priv wip">🛠 ${t.wip}</span>`:url==='private'?`<span class="priv" title="${t.privateTip}">🔒 ${t.private}</span>`:url?`<a class="visit" href="${url}" target="_blank" rel="noopener">${t.visit} ↗</a>`:''}</div></article>`).join('');
+  const PI = ['globe','layers','building','cap','grid','spark','clock','chart','home','game','cart','shield','film','pen'];
+  $('#projGrid').innerHTML = t.projects.map(([c,h,p,tags,url],i) => `<article class="card pj rv g${i%4+1}"><span class="shine"></span><span class="wm">${svg(PI[i]||'code')}</span><div class="top"><span class="ico">${svg(PI[i]||'code')}</span><span class="num">${String(i+1).padStart(2,'0')}</span></div><span class="cat">${c}</span><h3>${projName(h)}</h3>${projDomain(h,url)}<ul class="skl pjl">${projPoints(p)}</ul><div class="bot"><div class="tags">${tags.map(x=>`<span>${x}</span>`).join('')}</div>${url==='wip'?`<span class="priv wip">🛠 ${t.wip}</span>`:url==='private'?`<span class="priv" title="${t.privateTip}">🔒 ${t.private}</span>`:url?`<a class="visit" href="${url}" target="_blank" rel="noopener">${t.visit} ↗</a>`:''}</div></article>`).join('');
   $('#langs').innerHTML = t.langs.map(([n,l,v]) => `<div><div class="lg-row"><b>${n}</b><small>${l}</small></div><div class="meter"><i data-v="${v}"></i></div></div>`).join('');
   const L = [], c = CONTACT;
   if (c.email) L.push(`<a href="mailto:${c.email}">${svg('mail')}${t.lbl.email}</a>`);
