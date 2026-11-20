@@ -589,6 +589,9 @@ footer .flogo{background:linear-gradient(145deg,#2A252C,#1C1C22)!important;borde
   .tl .tl-h{flex-direction:column;align-items:flex-start;flex-wrap:nowrap;gap:8px}
   .tl .tl-h .when{order:-1}
 }
+/* project cards: category label beside the icon to keep cards compact */
+.pj .idc{display:flex;align-items:center;gap:10px}
+.pj .idc .cat{align-self:center!important;margin:0}
 @media print{.lux{color:#000!important;background:#fff!important;box-shadow:none}.lux *{color:#222!important}.lux::after,.lux .wm{display:none}}
 .tab.on{background:linear-gradient(135deg,#451D29,#682B3B);border-color:transparent;color:#fff}
 @media (max-width:860px){.pj.feat{grid-column:auto}.pj.feat h3{font-size:22px}}
@@ -944,7 +947,7 @@ function render(){
   $('#tabs').innerHTML = Object.entries(t.cats).map(([k,l]) => `<button class="tab${k===cat?' on':''}" data-c="${k}">${l}</button>`).join('');
   $('#skillGrid').innerHTML = t.skills.map(([c,ic,h,p],i) => `<div class="card lux g${i%4+1} sk rv${cat!=='all'&&cat!==c?' hide':''}" data-c="${c}"><span class="shine"></span><span class="wm">${svg(ic)}</span><div class="ic glass">${svg(ic)}</div><div><h4>${h}</h4>${Array.isArray(p) ? `<ul class="skl">${p.map(x => `<li>${x}</li>`).join('')}</ul>` : `<p>${p}</p>`}</div></div>`).join('');
   const PI = ['globe','layers','building','cap','grid','spark','clock','chart','home','game','cart','shield','film','pen'];
-  $('#projGrid').innerHTML = t.projects.map(([c,h,p,tags,url],i) => `<article class="card pj rv g${i%4+1}"><span class="shine"></span><span class="wm">${svg(PI[i]||'code')}</span><div class="top"><span class="ico">${svg(PI[i]||'code')}</span><span class="num">${String(i+1).padStart(2,'0')}</span></div><span class="cat">${c}</span><h3>${projName(h)}</h3>${projDomain(h,url)}<ul class="skl pjl">${projPoints(p)}</ul><div class="bot"><div class="tags">${tags.map(x=>`<span>${x}</span>`).join('')}</div>${url==='wip'?`<span class="priv wip">🛠 ${t.wip}</span>`:url==='private'?`<span class="priv" title="${t.privateTip}">🔒 ${t.private}</span>`:url?`<a class="visit" href="${url}" target="_blank" rel="noopener">${t.visit} ↗</a>`:''}</div></article>`).join('');
+  $('#projGrid').innerHTML = t.projects.map(([c,h,p,tags,url],i) => `<article class="card pj rv g${i%4+1}"><span class="shine"></span><span class="wm">${svg(PI[i]||'code')}</span><div class="top"><div class="idc"><span class="ico">${svg(PI[i]||'code')}</span><span class="cat">${c}</span></div><span class="num">${String(i+1).padStart(2,'0')}</span></div><h3>${projName(h)}</h3>${projDomain(h,url)}<ul class="skl pjl">${projPoints(p)}</ul><div class="bot"><div class="tags">${tags.map(x=>`<span>${x}</span>`).join('')}</div>${url==='wip'?`<span class="priv wip">🛠 ${t.wip}</span>`:url==='private'?`<span class="priv" title="${t.privateTip}">🔒 ${t.private}</span>`:url?`<a class="visit" href="${url}" target="_blank" rel="noopener">${t.visit} ↗</a>`:''}</div></article>`).join('');
   $('#langs').innerHTML = t.langs.map(([n,l,v]) => `<div><div class="lg-row"><b>${n}</b><small>${l}</small></div><div class="meter"><i data-v="${v}"></i></div></div>`).join('');
   const L = [], c = CONTACT;
   if (c.email) L.push(`<a href="mailto:${c.email}">${svg('mail')}${t.lbl.email}</a>`);
