@@ -626,7 +626,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
     <div class="tools">
       <button class="btn-ic" id="langBtn" title="Language">EN</button>
       <button class="btn-ic" id="themeBtn" title="Theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
-      <a class="btn-ic cv-dl" id="printBtn" href="cv-ar.pdf?v=3" download="Osamah-Mohammed-CV-AR.pdf" title="CV"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg></a>
+      <a class="btn-ic cv-dl" id="printBtn" href="cv-ar.pdf?v=4" download="Osamah-Mohammed-CV-AR.pdf" title="CV"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg></a>
     </div>
   </div>
 </header>
@@ -636,7 +636,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
     <canvas id="fx"></canvas><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
     <div class="wrap">
       <div class="ph rv">
-        <img src="photo.jpg?v=4" alt="أسامة محمد" id="photo">
+        <img src="photo.jpg?v=5" alt="أسامة محمد" id="photo">
         <div class="badge"><b></b><span data-i="available"></span></div>
       </div>
       <div class="rv">
@@ -647,7 +647,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 40px}
         <div class="cta">
           <a class="btn pri" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg><span data-i="ctaContact"></span></a>
           <a class="btn" href="#projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3"/></svg><span data-i="ctaWork"></span></a>
-          <a class="btn cv-dl" href="cv-ar.pdf?v=3" download="Osamah-Mohammed-CV-AR.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg><span data-i="ctaPdf"></span></a>
+          <a class="btn cv-dl" href="cv-ar.pdf?v=4" download="Osamah-Mohammed-CV-AR.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg><span data-i="ctaPdf"></span></a>
         </div>
         <div class="stats rv" id="stats"></div>
       </div>
@@ -888,7 +888,7 @@ function render(){
   $('#langBtn').textContent = lang === 'ar' ? 'EN' : 'ع';
   document.querySelectorAll('[data-i]').forEach(el => { const v = t[el.dataset.i]; if (typeof v === 'string') el.textContent = v; });
   $('#photo').alt = t.name;
-  document.querySelectorAll('.cv-dl').forEach(a => { a.href = `cv-${lang}.pdf?v=3`; a.setAttribute('download', `Osamah-Mohammed-CV-${lang.toUpperCase()}.pdf`); });
+  document.querySelectorAll('.cv-dl').forEach(a => { a.href = `cv-${lang}.pdf?v=4`; a.setAttribute('download', `Osamah-Mohammed-CV-${lang.toUpperCase()}.pdf`); });
   $('#nav').innerHTML = t.nav.map(([id,l]) => `<a href="#${id}" data-s="${id}">${l}</a>`).join('');
   $('#stats').innerHTML = t.stats.map(([n,l]) => `<div><strong>${n}</strong>${l}</div>`).join('');
   $('#facts').innerHTML = t.facts.map(([i,l,v]) => `<div class="fact"><span class="glass">${svg(i)}</span><div><small>${l}</small><b>${v}</b></div></div>`).join('');
